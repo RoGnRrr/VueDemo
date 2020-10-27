@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+
+<div id="app">
+    <cpn :c-info="info"></cpn>
+</div>
+
+</body>
+</html>
+
+<template id="cpn">
+    <div>
+        {{cInfo}}
+    </div>
+</template>
+
+<script>
+
+    const cpn = {
+        template: '#cpn',
+        props: {
+            cInfo: {
+                type: Object,
+                default() {
+                    return {};
+                }
+            }
+        }
+    };
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+            info: {
+                name: 'RoGnRrr',
+                age: 24,
+                height: 1.60
+            }
+        },
+        methods: {
+
+        },
+        computed: {
+
+        },
+        components: {
+            cpn
+        }
+    });
+
+</script>

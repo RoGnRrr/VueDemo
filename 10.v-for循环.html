@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in name">{{item}}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(item, index) in name">
+                {{index+1}}.{{item}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(value, key, index) in info">
+                {{index+1}}==={{key}}==={{value}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(item, index) in infos">
+                {{index}}==={{item.name}}==={{item.age}}==={{item.height}}
+            </li>
+            </li>
+        </ul>
+
+
+    </div>
+
+
+
+</body>
+</html>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            name: ['RWJ', 'DWJ', 'YJM', 'ZJY'],
+            info: {
+                name: 'RWJ',
+                age: 25,
+                height: 1.60
+            },
+            infos: [
+                {
+                    name: 'RWJ',
+                    age: 25,
+                    height: 1.60
+                },
+                {
+                    name: 'RMM',
+                    age: 24,
+                    height: 1.50
+                }
+            ]
+        },
+        methods: {
+
+        },
+        computed: {
+
+        }
+    });
+
+</script>

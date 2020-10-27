@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <cpn>
+            <span slot="c">中间标题</span>
+            <span slot="l">左边标题</span>
+            <button slot="r">右边标题</button>
+        </cpn>
+    </div>
+</body>
+</html>
+
+<template id="cpn">
+    <div>
+        <slot name="l"><span>左边</span></slot>
+        <slot name="c"><span>中间</span></slot>
+        <slot name="r"><span>右边</span></slot>
+    </div>
+</template>
+
+<script>
+
+    const cpn = {
+        template: '#cpn',
+        components: {
+        }
+    };
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello~'
+        },
+        components: {
+            cpn
+        }
+    });
+
+</script>

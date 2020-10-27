@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in letters">{{item}}</li>
+        </ul>
+        <button @click="btnClick">按钮</button>
+    </div>
+
+
+
+</body>
+</html>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            letters: ['a', 'b', 'c', 'd', 'e']
+        },
+        methods: {
+            btnClick() {
+
+                // push方法(响应式)
+                // this.letters.push('aaa');
+
+                // 修改值(非响应式)
+                // this.letters[0] = 'bbbb';
+
+                // pop 删除最后一个下标值(响应式)
+                // this.letters.pop();
+
+                // shift 删除第一个下标值(响应式)
+                // this.letters.shift();
+
+                // unshift 在第一个下标添加值(响应式)
+                // this.letters.unshift('aaa');
+
+                // slice 删除/插入/替换元素(响应式)
+                // this.letters.splice(1, 2); //删除元素
+                // this.letters.splice(1, 0, 'a1'); //新增元素
+                // this.letters.splice(1, 1, 'a1'); //替换元素
+
+                // sort 排序(响应式)
+                // this.letters.sort();
+
+                // reverse 倒叙(响应式)
+                this.letters.reverse();
+
+            }
+
+        },
+        computed: {
+
+        }
+    });
+
+</script>

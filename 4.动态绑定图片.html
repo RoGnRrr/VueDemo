@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <img v-bind:src="img" v-bind:width="600" />
+        <img :src="img" :width="600" />
+    </div>
+</body>
+</html>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            count: 0,
+            img: 'https://i.pximg.net/img-original/img/2020/09/25/17/46/36/84601284_p0.png'
+        },
+        methods: {
+            add: function () {
+                this.count++
+            },
+            sub: function () {
+                this.count--
+            },
+        }
+    });
+
+</script>

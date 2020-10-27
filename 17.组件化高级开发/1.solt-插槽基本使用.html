@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <cpn></cpn>
+        <cpn><span>哈哈哈</span></cpn>
+        <cpn><i>呵呵呵</i></cpn>
+        <cpn>
+            <i>我是i元素</i>
+            <div>我是div元素</div>
+            <p>我是p元素</p>
+        </cpn>
+    </div>
+</body>
+</html>
+
+<template id="cpn">
+    <div>
+        <h2>我是组件</h2>
+        <h2>我是组件,哈哈哈</h2>
+        <slot><button>案例</button></slot>
+    </div>
+</template>
+
+<script>
+
+    const cpn = {
+        template: '#cpn',
+        components: {
+        }
+    };
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello~'
+        },
+        components: {
+            cpn
+        }
+    });
+
+</script>

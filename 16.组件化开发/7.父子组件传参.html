@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+
+<div id="app">
+    <cpn :aaa="aaa" :tlists="lists"></cpn>
+</div>
+
+</body>
+</html>
+
+<template id="cpn">
+    <div>
+        <div v-for="(item, index) in tlists">{{item}}</div>
+        <div v-for="(item, index) in games">{{item}}</div>
+        <div>{{aaa}}</div>
+
+    </div>
+</template>
+
+<script>
+
+
+    const cpn = {
+        template: '#cpn',
+        // props: ['tlists']
+        props: {
+            // tlists: Array
+            tlists: {
+                type: Array,
+                default(){
+                    return ['A', 'B', 'C'];
+                }
+            },
+            games: {
+                type: Array,
+                default(){
+                    return ['LOL', 'DOTA2', 'SD敢达OL'];
+                },
+                required: false // 是否必传f
+            },
+            aaa: {
+                validator: function(value){
+                    return value>=0 && value<=128;
+                },
+                default: 'default'
+            },
+        }
+    };
+
+
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message: '小鸟,你好呀~',
+            age: 0,
+            name: '',
+            aaa: 129,
+            lists: ['G2', 'LGD', 'TES']
+        },
+        methods: {
+
+        },
+        computed: {
+
+        },
+        components: {
+            'cpn' : cpn
+        }
+    });
+
+</script>

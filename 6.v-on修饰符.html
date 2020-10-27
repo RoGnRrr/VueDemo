@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <div @click="divClike">
+            <!-- 停止冒泡 -->
+            <button @click.stop="btnClick">按钮</button>
+        </div>
+
+        <hr/>
+
+        <form>
+            <!-- 停止默认行为 -->
+            <button @click.prevent="submitClick" type="submit">提交</button>
+        </form>
+
+        <hr/>
+
+        <!-- 监听指定键帽 -->
+        <input @keyup.k.j="keyUp">
+
+        <hr/>
+        <!-- 事件只触发一次 -->
+        <button @click.once="btn2Click">按钮</button>
+
+    </div>
+
+
+</body>
+</html>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            count: 0,
+            rwj: 'RoGnWeiJie'
+        },
+        methods: {
+            divClike() {
+                console.log("divClike");
+            },
+            btnClick() {
+                console.log("btnClick");
+            },
+            btn2Click() {
+                console.log("btn2Click");
+            },
+            submitClick() {
+                console.log("submitClick");
+            },
+            keyUp() {
+                console.log("keyUp");
+            }
+        }
+    });
+
+</script>

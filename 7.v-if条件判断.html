@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+
+        <h2 v-if="isShow">
+           <div>aaatrue</div>
+           <div>bbbtrue</div>
+           <div>ccctrue</div>
+        </h2>
+        <h2 v-else>
+            <div>aaaelse</div>
+            <div>bbbelse</div>
+            <div>cccelse</div>
+        </h2>
+
+        <hr/>
+
+        <h2 v-if="score >= 90">
+            <div>>=90</div>
+        </h2>
+        <h2 v-else-if="score >= 80">
+            <div>>=80</div>
+        </h2>
+        <h2 v-else-if="score >= 50">
+            <div>>=50</div>
+        </h2>
+        <h2 v-else-if="score >= 0">
+            <div>>=0</div>
+        </h2>
+        <h2 v-else>
+            <div>-0</div>
+        </h2>
+
+        <hr/>
+        <h2>{{result}}</h2>
+    </div>
+
+
+</body>
+</html>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            isShow: true,
+            score: -1
+        },
+        methods: {
+
+        },
+        computed: {
+            result() {
+                let showMessage = '';
+                if(this.score >= 90) {
+                    showMessage = ">=90";
+                } else if (this.score >= 80)  {
+                    showMessage = ">=80";
+                } else if (this.score >= 50)  {
+                    showMessage = ">=50";
+                } else if (this.score >= 0)  {
+                    showMessage = ">=0";
+                } else {
+                    showMessage = "-0";
+                }
+                return showMessage;
+            }
+        }
+    });
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <h2>{{count}}</h2>
+        <button @click="increase(1)">+</button>
+        <button @click="decrease('abc', rwj, $event)">-</button>
+    </div>
+</body>
+</html>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            count: 0,
+            rwj: 'RoGnWeiJie'
+        },
+        methods: {
+            increase(a) {
+                console.log(a);
+            },
+            decrease(a, b, event) {
+                console.log(a);
+                console.log(b);
+                console.log(event);
+            }
+        }
+    });
+
+</script>

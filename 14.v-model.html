@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<body>
+    <div id="app">
+        <input type="text" v-model="message">
+        <hr/>
+        <label>
+            <input v-model="sex" type="radio" id="male" name="sex" value="男">男
+        </label>
+        <label>
+            <input v-model="sex" type="radio" id="female" name="sex" value="女">女
+        </label>
+        <h3>您选择的性别是:{{sex}}</h3>
+        <hr/>
+        <!-- checkbox单选框 -->
+        <label for="agree">
+            <input v-model="isAgree" type="checkbox" id="agree">同意协议
+        </label>
+        <h3>您选择的协议是:{{isAgree}}</h3>
+        <button :disabled="!isAgree">下一步</button>
+        <hr/>
+        <!-- checkbox多选框 -->
+        <input v-model="hobbies" type="checkbox" value="篮球" >篮球
+        <input v-model="hobbies" type="checkbox" value="羽毛球" >羽毛球
+        <input v-model="hobbies" type="checkbox" value="摄影" >摄影
+        <input v-model="hobbies" type="checkbox" value="真人PK" >真人PK
+        <h3>您的爱好是:{{hobbies}}</h3>
+        <hr/>
+        <!-- select单选 -->
+        <select v-model="fruits" name="fruits" id="fruits">
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="葡萄">葡萄</option>
+            <option value="菠萝">菠萝</option>
+            <option value="橙子">橙子</option>
+        </select>
+        <h3>您选择的水果是:{{fruits}}</h3>
+        <hr/>
+        <!-- select多选 -->
+        <select multiple v-model="fruits2" name="fruits2" id="fruits2">
+            <option value="苹果">苹果</option>
+            <option value="香蕉">香蕉</option>
+            <option value="葡萄">葡萄</option>
+            <option value="菠萝">菠萝</option>
+            <option value="橙子">橙子</option>
+        </select>
+        <h3>您选择的水果是:{{fruits2}}</h3>
+    </div>
+</body>
+</html>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '小鸟,你好呀~',
+            sex: '男',
+            isAgree: false,
+            hobbies: [],
+            fruits: '香蕉',
+            fruits2: []
+        },
+        methods: {
+
+        },
+        computed: {
+
+        }
+    });
+
+</script>
